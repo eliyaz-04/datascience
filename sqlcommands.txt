@@ -1,0 +1,71 @@
+create database school_db;
+ERROR: 1007: Can't create database 'school_db'; database exists
+ MySQL  localhost:33060+ ssl  SQL > show databases;
++--------------------+
+| Database           |
++--------------------+
+| eliyaz             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school_db          |
+| sys                |
+| world              |
++--------------------+
+8 rows in set (0.0035 sec)
+ MySQL  localhost:33060+ ssl  SQL > use school_db;
+Default schema set to `school_db`.
+Fetching global names, object names from `school_db` for auto-completion... Press ^C to stop.
+ MySQL  localhost:33060+ ssl  school_db  SQL > c
+                                            ->
+                                            -> show tables;
+ERROR: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'c
+
+show tables' at line 1
+ MySQL  localhost:33060+ ssl  school_db  SQL > show tables;
++---------------------+
+| Tables_in_school_db |
++---------------------+
+| children            |
+| students            |
++---------------------+
+2 rows in set (0.0050 sec)
+ MySQL  localhost:33060+ ssl  school_db  SQL > select *from students;
++----+--------+-----+--------+
+| id | name   | age | GENDER |
++----+--------+-----+--------+
+|  1 | eliyaz |  23 |   NULL |
+|  1 | eliyaz |  23 |   NULL |
+|  2 | POOKIE |  22 |   NULL |
++----+--------+-----+--------+
+3 rows in set (0.0045 sec)
+ MySQL  localhost:33060+ ssl  school_db  SQL > update students
+                                            -> set name='krishna'
+                                            -> where id=2;
+Query OK, 1 row affected (0.0234 sec)
+
+Rows matched: 1  Changed: 1  Warnings: 0
+ MySQL  localhost:33060+ ssl  school_db  SQL > select *from students;
++----+---------+-----+--------+
+| id | name    | age | GENDER |
++----+---------+-----+--------+
+|  1 | eliyaz  |  23 |   NULL |
+|  1 | eliyaz  |  23 |   NULL |
+|  2 | krishna |  22 |   NULL |
++----+---------+-----+--------+
+3 rows in set (0.0016 sec)
+ MySQL  localhost:33060+ ssl  school_db  SQL > create database company_db;
+Query OK, 1 row affected (0.0143 sec)
+ MySQL  localhost:33060+ ssl  school_db  SQL > use company_db;
+Default schema set to `company_db`.
+Fetching global names, object names from `company_db` for auto-completion... Press ^C to stop.
+show databases;
+use company_db;
+create table employees(emp_id int,emp_name varchar(100),
+salary decimal(10,2),
+department varchar(50));
+desc employees;
+insert into employees values(1,'dhanush',20000,'development'),
+(2,'eliyaz',30000,'hr'),(3,'seela',40000,'reception');
+select *from employees;

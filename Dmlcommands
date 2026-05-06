@@ -1,0 +1,50 @@
+Task 1: Create database school_db
+CREATE DATABASE school_db;
+
+Task 2: Create table students in school_db
+USE school_db;
+
+CREATE TABLE students (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    age INT
+);
+
+Task 3: Create database company_db
+CREATE DATABASE company_db;
+
+Task 4 & Task 5: Create tables in company_db
+USE company_db;
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(100) NOT NULL,
+    salary DECIMAL(10,2),
+    department VARCHAR(50)
+);
+
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100) NOT NULL,
+    price FLOAT
+);
+
+Task 6: Create database library_db
+CREATE DATABASE library_db;
+
+Task 7 & Task 8: Create tables in library_db
+USE library_db;
+
+CREATE TABLE books (
+    book_id INT PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    author VARCHAR(100),
+    price DECIMAL(8,2)
+);
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_name VARCHAR(100) NOT NULL,
+    order_date DATE,
+    amount DECIMAL(10,2)
+);
